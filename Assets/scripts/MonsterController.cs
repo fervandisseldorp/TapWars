@@ -11,10 +11,26 @@ public class MonsterController : MonoBehaviour {
 	void Start () {
 		rigidbody = GetComponent<Rigidbody> ();
 		rigidbody.velocity = transform.right * speed;
+        //transform.Translate(Vector3.right * speed, Space.Self);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    void onMouseDown()
+    {
+        doDamage(10);
+    }
+
+    void doDamage(int damage)
+    {
+        Debug.Log("do damage method");
+        hp -= damage;
+        if (hp <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
