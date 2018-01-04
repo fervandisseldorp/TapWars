@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class IncomeScript : MonoBehaviour {
-	private float incomeTime = 10.0f;
+	private float incomeTime = 20.0f;
 	private int income;
 	private int gold;
 

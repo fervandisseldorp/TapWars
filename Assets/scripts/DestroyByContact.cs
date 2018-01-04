@@ -4,22 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class DestroyByContact : MonoBehaviour {
-	public Text livesText;
-
 
 
 	void OnTriggerEnter(Collider other) 
 	{
+		Debug.Log (other);
 		if (other.tag == "Wall")
 		{
 			return;
 		}
+		Debug.Log ("destroying the other object");
 		Destroy(other.gameObject);
-		setLivesText ();
 	}
-
-	void setLivesText(){
-		livesText.text = "test";
-
-	}
+		
 }
