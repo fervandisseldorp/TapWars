@@ -6,5 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_scenes/startScreen.unity
+    guid: 60f51f2f346d37742afd0ef51c33fda8
+  - enabled: 1
+    path: Assets/WaitingForOpponent.unity
+    guid: d04e0787e62611d4fad9e9a99b2e8669
+  - enabled: 1
     path: Assets/_scenes/mainScene.unity
     guid: b9909f672a4ee184fa52890e8c52f0f5
