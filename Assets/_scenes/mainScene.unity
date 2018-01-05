@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 347231869}
   - component: {fileID: 347231870}
   - component: {fileID: 347231871}
+  - component: {fileID: 347231872}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -255,6 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  socketObject: {fileID: 0}
 --- !u!114 &347231871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +271,18 @@ MonoBehaviour:
   timerText: {fileID: 436155687}
   incomeText: {fileID: 1010997436}
   goldText: {fileID: 1582053617}
+--- !u!114 &347231872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 347231868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49164e5b67cbd642acca9ad79de158d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textfield: {fileID: 0}
 --- !u!1 &417130875
 GameObject:
   m_ObjectHideFlags: 0
