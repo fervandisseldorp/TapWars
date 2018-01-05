@@ -9,16 +9,8 @@ public class GameController : MonoBehaviour {
 	public GameObject socketObject;
 
 
-	void awake(){
-		DontDestroyOnLoad (this.gameObject);
-	}
-
 	// Use this for initialization
 	void Start () {
-		Debug.Log ("start in gamecontroller");
-		//GameObject go = GameObject.Find ("SocketIO");
-		SocketIOComponent socket = socketObject.GetComponent<SocketIOComponent>();
-
 		Debug.Log ("not destroying gameobject socket on change");
 	}
 
