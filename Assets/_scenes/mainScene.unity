@@ -256,7 +256,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
-  socketObject: {fileID: 0}
 --- !u!114 &347231871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,7 +281,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49164e5b67cbd642acca9ad79de158d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textfield: {fileID: 0}
+  monster: {fileID: 1951001799543304, guid: baa71e1e503f47b4b8eb174925db0f92, type: 2}
+  spawn: {fileID: 1833969669}
 --- !u!1 &417130875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1553,6 +1553,34 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1582053615}
+--- !u!1 &1833969668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1833969669}
+  m_Layer: 0
+  m_Name: TestSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1833969669
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1833969668}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -49.1, y: -0.05241394, z: -9.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1835026662
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,7 +1750,6 @@ GameObject:
   - component: {fileID: 2052697386}
   - component: {fileID: 2052697385}
   - component: {fileID: 2052697384}
-  - component: {fileID: 2052697387}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1788,8 +1815,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2052697387}
-        m_MethodName: createMonster
+      - m_Target: {fileID: 347231872}
+        m_MethodName: MonsterButtonPressed
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1834,19 +1861,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2052697382}
---- !u!114 &2052697387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2052697382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99655382d2e4f2f428aa132c52e1297f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monster: {fileID: 0}
-  spawn: {fileID: 0}
 --- !u!1 &2058228631
 GameObject:
   m_ObjectHideFlags: 0

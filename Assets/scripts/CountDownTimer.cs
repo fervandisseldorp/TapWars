@@ -23,10 +23,9 @@ public class CountDownTimer : MonoBehaviour {
 		}
 
 	}
-
-
-	void update(){
-		if(gameStarts){
+		
+	void Update(){
+		if(gameStarts == true){
 			timeLeft -= Time.deltaTime;
 			updateTextField (timeLeft);
 		}
@@ -38,6 +37,9 @@ public class CountDownTimer : MonoBehaviour {
 
 	private void updateTextField(float timeLeft){
 		textfield.text = "" + timeLeft;
+		if (timeLeft < 0) {
+			Application.LoadLevel ("mainScene");
+		}
 	}
 
 }
