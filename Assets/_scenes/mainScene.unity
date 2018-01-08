@@ -281,9 +281,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49164e5b67cbd642acca9ad79de158d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsters:
-  - type: A
-    monster: {fileID: 1019528631311726, guid: 0565a486aacf0dd46a996d0b1959bd86, type: 2}
 --- !u!1 &417130875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,7 +1821,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: type A
+          m_StringArgument: A
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

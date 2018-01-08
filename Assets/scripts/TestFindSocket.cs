@@ -43,7 +43,6 @@ public class TestFindSocket : MonoBehaviour {
             spawn = GameObject.Find("Spawn");
             Transform transform = spawn.GetComponent<Transform>();
 
-            
             string monsterPath = "prefabs/Monster" + type;
 
             Debug.Log("Path test was: " + monsterPath);
