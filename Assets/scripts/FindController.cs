@@ -11,6 +11,7 @@ public class FindController : MonoBehaviour {
 		GameObject gameController = GameObject.Find ("GameController");
 		IncomeScript incomeScript = gameController.GetComponent<IncomeScript> ();
 
+		Debug.Log ("end game controller will change text");
 
 		if (incomeScript.getWon ()) {
 			textfield.text = "You WON !!!";

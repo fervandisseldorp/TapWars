@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using SocketIO;
+using UnityEngine.SceneManagement;
 
 public class IncomeScript : MonoBehaviour {
 	private float incomeTime = 20.0f;
 	private bool won;
+	bool canContinue = true;
+	Scene scene;
 	GameObject socketObject;
 	SocketIOComponent socket;
 	public int income;
@@ -19,13 +22,12 @@ public class IncomeScript : MonoBehaviour {
 	public Text livesText;
 
 
-
 	// Use this for initialization
 	void Start () {
 //		income = 10;
 //		gold = 50;
 //		lives = 10;
-
+		scene = SceneManager.GetActiveScene ();
 
 		socketObject = GameObject.Find("SocketIO");
 		socket = socketObject.GetComponent<SocketIOComponent>();
@@ -37,20 +39,21 @@ public class IncomeScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		timerText.text = "timer: " + incomeTime;
+		if(canContinue){
+			timerText.text = "timer: " + incomeTime;
 
-		incomeTime -= Time.deltaTime;
-		if (incomeTime <= 0) {
-			addIncomeGold (income);
-			incomeTime = 10.0f;
+			incomeTime -= Time.deltaTime;
+			if (incomeTime <= 0) {
+				addIncomeGold (income);
+				incomeTime = 10.0f;
+			}
 		}
 	}
 
 	// Add your income to your current gold
 	void addIncomeGold(int inc){
-		this.gold += inc;
-		goldText.text = "Gold: "+ this.gold;
-		//Debug.Log ("your current gold: " + gold);
+			this.gold += inc;
+			goldText.text = "Gold: "+ this.gold;
 	}
 
 
@@ -91,6 +94,8 @@ public class IncomeScript : MonoBehaviour {
 			socket.Emit("lostAllLives");
 			won = false;
 			socket.socket.Close ();
+			Destroy (socketObject);
+			canContinue = false;
 			Application.LoadLevel ("EndGameScreen");
 		}
 	}
@@ -102,8 +107,12 @@ public class IncomeScript : MonoBehaviour {
 	private void opponentLost(SocketIOEvent evt){
 		won = true;
 		socket.socket.Close ();
+		Destroy (socketObject);
+		canContinue = false;
 		Application.LoadLevel ("EndGameScreen");
 	}
 		
+
+
 
 }
