@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SizingScript : MonoBehaviour {
+public class Monster : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

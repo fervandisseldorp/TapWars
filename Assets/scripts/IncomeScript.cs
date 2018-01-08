@@ -33,6 +33,6 @@ public class IncomeScript : MonoBehaviour {
 
 	void addIncomeGold(int inc){
 		gold += inc;
-		Debug.Log ("your current gold: " + gold);
+		//Debug.Log ("your current gold: " + gold);
 	}
 }
