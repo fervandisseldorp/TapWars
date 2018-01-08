@@ -4,10 +4,16 @@ using SocketIO;
 public class TestFindSocket : MonoBehaviour {
 
 	GameObject spawn;
+	GameObject gameController;
+	IncomeScript incomeScript;
+
+
 	SocketIOComponent socket;
 	
 	// Use this for initialization
 	void Start () {
+		gameController = GameObject.Find ("GameController");
+		incomeScript = gameController.GetComponent<IncomeScript>();
 		GameObject socketObject = GameObject.Find("SocketIO");
 		if(socketObject != null){
 			Debug.Log ("found the object");
@@ -16,12 +22,13 @@ public class TestFindSocket : MonoBehaviour {
 			if (socket != null) {
 				Debug.Log ("found something named socket");
 				socket.On("monsterSpawn", MonsterSpawn);
-
 			}
 		}
+
 			
 	}
 
+	// Server sends to opponent
 	private void MonsterSpawn(SocketIOEvent evt){
 		Debug.Log ("monster spawn called");
 
@@ -62,23 +69,39 @@ public class TestFindSocket : MonoBehaviour {
 
             
         }
-
-        
-
-
-
+			
         
     }
 
 
+	// Player sends this to server
 	public void MonsterButtonPressed(string type){
 		Debug.Log ("Button was clicked from monster: " + type + " !");
 
-        JSONObject obj = new JSONObject();
-        obj.AddField("monsterType", type);
-        obj.AddField("monsterLevel", 1);
+		string monsterPath = "prefabs/Monster" + type;
+		GameObject monsterObj = (GameObject) Resources.Load(monsterPath) as GameObject;
+		MonsterController monsterController = monsterObj.GetComponent<MonsterController> ();
 
-        socket.Emit("monsterSpawn", obj);
+		// Check if player has enough gold.
+		if(incomeScript.getGold() >= monsterController.getPrice() ){
+			Debug.Log("You have " + incomeScript.getGold() + " Gold and the monster costs " + monsterController.getPrice() );
+
+			// adding income
+			int increment = monsterController.getPrice () / 2;
+			incomeScript.addIncome (increment);
+
+			// paying for monster
+			incomeScript.substractGold( monsterController.getPrice() );
+			Debug.Log ("new gold value = " + incomeScript.getGold() + " new income value = " + incomeScript.getIncome() );
+
+			// Create the json object and send monster
+			JSONObject obj = new JSONObject();
+			obj.AddField("monsterType", type);
+			obj.AddField("monsterLevel", 1);
+
+			socket.Emit("monsterSpawn", obj);
+
+		}
+			
     }
-
 }

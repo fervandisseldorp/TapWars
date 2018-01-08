@@ -5,19 +5,25 @@ using UnityEngine.UI;
 
 public class IncomeScript : MonoBehaviour {
 	private float incomeTime = 20.0f;
-	private int income;
-	private int gold;
+	public int income;
+	public int gold;
+	public int lives;
 
 	public Text timerText;
 	public Text incomeText;
 	public Text goldText;
+	public Text livesText;
 
 
 
 	// Use this for initialization
 	void Start () {
-		income = 10;
-		gold = 50;
+//		income = 10;
+//		gold = 50;
+//		lives = 10;
+
+		livesText.text = "Lives: " + lives;
+		incomeText.text = "Income: " + income;
 	}
 	
 	// Update is called once per frame
@@ -31,8 +37,33 @@ public class IncomeScript : MonoBehaviour {
 		}
 	}
 
+	// Add your income to your current gold
 	void addIncomeGold(int inc){
-		gold += inc;
+		this.gold += inc;
+		goldText.text = "Gold: "+ this.gold;
 		//Debug.Log ("your current gold: " + gold);
+	}
+
+
+	// Get your income value
+	public int getIncome(){
+		return income;
+	}
+		
+	// Add a value to your income
+	public void addIncome(int value){
+		this.income +=value;
+		incomeText.text = "Income: "+ this.income;
+	}
+
+	// Get your current gold value
+	public int getGold(){
+		return gold;
+	}
+
+	// Substract a value from your current gold.
+	public void substractGold(int value){
+		this.gold -= value;
+		goldText.text = "Gold: "+ this.gold;
 	}
 }

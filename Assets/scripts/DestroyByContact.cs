@@ -13,8 +13,10 @@ public class DestroyByContact : MonoBehaviour {
 		{
 			return;
 		}
-		Debug.Log ("destroying the other object");
-		Destroy(other.gameObject);
+		if (other.tag == "Monster") {
+			Debug.Log ("destroying the monster and substracting live");
+			Destroy(other.gameObject);
+		}
 	}
 		
 }
