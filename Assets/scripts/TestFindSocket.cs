@@ -1,24 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using SocketIO;
 
 public class TestFindSocket : MonoBehaviour {
-	public GameObject monsterA;
-    public GameObject monsterB;
 
-    ArrayList monsterArray;
-
-	public Vector3 spawn;
+	GameObject spawn;
 	SocketIOComponent socket;
 	
 	// Use this for initialization
 	void Start () {
-        monsterArray.Add("A");
-        monsterArray.Add("B");
-
-
 		GameObject socketObject = GameObject.Find("SocketIO");
 		if(socketObject != null){
 			Debug.Log ("found the object");
@@ -37,7 +26,7 @@ public class TestFindSocket : MonoBehaviour {
 		Debug.Log ("monster spawn called");
 
         string type = "";
-        string level;
+        int level = 1;
         
 
         if (evt.data != null)
@@ -46,16 +35,36 @@ public class TestFindSocket : MonoBehaviour {
             JSONObject monsterType = evt.data.GetField("monsterType");
             JSONObject monsterLevel = evt.data.GetField("monsterLevel");
 
-            type = monsterType.n.ToString();
+            type = monsterType.str.ToString();
+            level = int.Parse(monsterLevel.n.ToString());
+            Debug.Log("Received monster type: " + type + " of level: " + level);
+            //Vector3 spawnPosition = new Vector3(spawn.x, spawn.y, Random.Range(-spawn.z, spawn.z));
 
-            if (type == "A")
+            spawn = GameObject.Find("Spawn");
+            Transform transform = spawn.GetComponent<Transform>();
+
+            
+            string monsterPath = "prefabs/Monster" + type;
+
+            Debug.Log("Path test was: " + monsterPath);
+
+            GameObject monster = (GameObject) Resources.Load(monsterPath) as GameObject;
+            if(monster != null)
             {
-                //Instantiate(monster, spawn.position, spawn.rotation);
-
+                Debug.Log("Monster found");
             }
+            else
+            {
+                Debug.Log("Monster not found");
+            }
+
+            Debug.Log("Spawn position was: " + transform.position + " and rotation: " + transform.rotation);
+            Instantiate(monster, transform.position, transform.rotation);
+
+            
         }
 
-        Vector3 spawnPosition = new Vector3(spawn.x, spawn.y, Random.Range(-spawn.z, spawn.z));
+        
 
 
 
@@ -71,7 +80,6 @@ public class TestFindSocket : MonoBehaviour {
         obj.AddField("monsterLevel", 1);
 
         socket.Emit("monsterSpawn", obj);
-        //Instantiate (monster, spawn.position, spawn.rotation);
     }
 
 }
