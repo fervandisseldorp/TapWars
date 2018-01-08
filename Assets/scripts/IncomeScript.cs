@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using SocketIO;
 
 public class IncomeScript : MonoBehaviour {
 	private float incomeTime = 20.0f;
+	private bool won;
+	GameObject socketObject;
+	SocketIOComponent socket;
 	public int income;
 	public int gold;
 	public int lives;
@@ -21,6 +25,11 @@ public class IncomeScript : MonoBehaviour {
 //		income = 10;
 //		gold = 50;
 //		lives = 10;
+
+
+		socketObject = GameObject.Find("SocketIO");
+		socket = socketObject.GetComponent<SocketIOComponent>();
+		socket.On("opponentLost", opponentLost);
 
 		livesText.text = "Lives: " + lives;
 		incomeText.text = "Income: " + income;
@@ -66,4 +75,35 @@ public class IncomeScript : MonoBehaviour {
 		this.gold -= value;
 		goldText.text = "Gold: "+ this.gold;
 	}
+
+	public int getLives(){
+		return lives;
+	}
+
+	// Reduces players lives by 1
+	public void substractLive(){
+		this.lives -= 1;
+		livesText.text = "Lives: " + this.lives;
+
+		if(lives < 1){
+			Debug.Log ("Lives reached 0");
+
+			socket.Emit("lostAllLives");
+			won = false;
+			socket.socket.Close ();
+			Application.LoadLevel ("EndGameScreen");
+		}
+	}
+
+	public bool getWon(){
+		return this.won;
+	}
+
+	private void opponentLost(SocketIOEvent evt){
+		won = true;
+		socket.socket.Close ();
+		Application.LoadLevel ("EndGameScreen");
+	}
+		
+
 }

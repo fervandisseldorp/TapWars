@@ -4,7 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class DestroyByContact : MonoBehaviour {
+	public GameObject gameController;
+	private IncomeScript incomeScript;
 
+	void Start(){
+		incomeScript = gameController.GetComponent<IncomeScript> ();
+	}
 
 	void OnTriggerEnter(Collider other) 
 	{
@@ -16,6 +21,8 @@ public class DestroyByContact : MonoBehaviour {
 		if (other.tag == "Monster") {
 			Debug.Log ("destroying the monster and substracting live");
 			Destroy(other.gameObject);
+
+			incomeScript.substractLive ();
 		}
 	}
 		

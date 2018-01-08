@@ -4,9 +4,6 @@ using UnityEngine;
 using SocketIO;
 
 public class GameController : MonoBehaviour {
-	public int lives;
-	//private SocketIOComponent socket;
-	GameObject socketObject;
 
 
 	// Use this for initialization

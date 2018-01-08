@@ -7,7 +7,6 @@ public class TestFindSocket : MonoBehaviour {
 	GameObject gameController;
 	IncomeScript incomeScript;
 
-
 	SocketIOComponent socket;
 	
 	// Use this for initialization
@@ -35,7 +34,6 @@ public class TestFindSocket : MonoBehaviour {
         string type = "";
         int level = 1;
         
-
         if (evt.data != null)
         {
             Debug.Log("type monster wordt geprint: " + type);
