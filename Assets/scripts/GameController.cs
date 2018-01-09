@@ -31,7 +31,7 @@ public class GameController : MonoBehaviour {
 		if(Input.GetMouseButtonDown(0)){
 			Debug.Log ("mouse button pressed");
 
-			Ray raycast = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+			Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit raycastHit;
 			if (Physics.Raycast(raycast, out raycastHit))
 			{
@@ -42,8 +42,10 @@ public class GameController : MonoBehaviour {
                     raycastHit.collider.gameObject.GetComponent<MonsterController>().DamageMonster();
                 }
 			}
-
 		}
+			
+
+
 	}
 
 }

@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class CameraBehaviour : MonoBehaviour {
 	// Use this for initialization
+	void Awake(){
+		Screen.orientation = ScreenOrientation.LandscapeRight;
+	}
+
 	void Start () 
 	{
 		// set the desired aspect ratio (the values in this example are
