@@ -33,14 +33,14 @@ public class IncomeScript : MonoBehaviour {
 		socket = socketObject.GetComponent<SocketIOComponent>();
 		socket.On("opponentLost", opponentLost);
 
-		livesText.text = "Lives: " + lives;
-		incomeText.text = "Income: " + income;
+		livesText.text = "" + lives;
+		incomeText.text = "" + income;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(canContinue){
-			timerText.text = "timer: " + incomeTime;
+			timerText.text = "" + incomeTime;
 
 			incomeTime -= Time.deltaTime;
 			if (incomeTime <= 0) {
@@ -53,7 +53,7 @@ public class IncomeScript : MonoBehaviour {
 	// Add your income to your current gold
 	void addIncomeGold(int inc){
 			this.gold += inc;
-			goldText.text = "Gold: "+ this.gold;
+			goldText.text = ""+ this.gold;
 	}
 
 
@@ -65,7 +65,7 @@ public class IncomeScript : MonoBehaviour {
 	// Add a value to your income
 	public void addIncome(int value){
 		this.income +=value;
-		incomeText.text = "Income: "+ this.income;
+		incomeText.text = ""+ this.income;
 	}
 
 	// Get your current gold value
@@ -76,7 +76,7 @@ public class IncomeScript : MonoBehaviour {
 	// Substract a value from your current gold.
 	public void substractGold(int value){
 		this.gold -= value;
-		goldText.text = "Gold: "+ this.gold;
+		goldText.text = ""+ this.gold;
 	}
 
 	public int getLives(){
@@ -86,7 +86,7 @@ public class IncomeScript : MonoBehaviour {
 	// Reduces players lives by 1
 	public void substractLive(){
 		this.lives -= 1;
-		livesText.text = "Lives: " + this.lives;
+		livesText.text = "" + this.lives;
 
 		if(lives < 1){
 			Debug.Log ("Lives reached 0");

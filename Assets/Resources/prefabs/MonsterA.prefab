@@ -395,9 +395,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4655245724938492}
   - component: {fileID: 95259274046405708}
-  - component: {fileID: 114828155034593748}
-  - component: {fileID: 136267158702929240}
   - component: {fileID: 54843771736669574}
+  - component: {fileID: 136267158702929240}
+  - component: {fileID: 114828155034593748}
   m_Layer: 0
   m_Name: MonsterA
   m_TagString: Monster
@@ -1558,7 +1558,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1061126440903208}
-  m_LocalRotation: {x: -0.7026858, y: 0.70268583, z: -0.11131679, w: 0.008594787}
+  m_LocalRotation: {x: -0.70268583, y: 0.7026859, z: -0.1113168, w: 0.008594788}
   m_LocalPosition: {x: -0.22499214, y: -0.08028132, z: -0.005905411}
   m_LocalScale: {x: 1, y: 1, z: 1.0000001}
   m_Children:
