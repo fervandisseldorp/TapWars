@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FindController : MonoBehaviour {
 	public Text textfield;
+	SceneManager sceneManager;
 
 	// Use this for initialization
 	void Start () {
@@ -16,8 +18,12 @@ public class FindController : MonoBehaviour {
 		if (incomeScript.getWon ()) {
 			textfield.text = "You WON !!!";
 		} else {
-			textfield.text = "You LOST NOOB !";
+			textfield.text = "You LOST!";
 		}
+	}
+
+	public void returnHomeButtonPressed(){
+		SceneManager.LoadScene("startScreen");
 	}
 
 }
