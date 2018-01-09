@@ -6,7 +6,7 @@ using UnityEngine;
 public class CameraBehaviour : MonoBehaviour {
 	// Use this for initialization
 	void Awake(){
-		Screen.orientation = ScreenOrientation.LandscapeRight;
+		// Screen.orientation = ScreenOrientation.LandscapeRight;
 	}
 
 	void Start () 
