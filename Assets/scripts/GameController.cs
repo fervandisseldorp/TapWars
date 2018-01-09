@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour {
 				if (raycastHit.collider.CompareTag("Monster"))
 				{
 					Debug.Log("Monster clicked");
+                    raycastHit.collider.gameObject.GetComponent<MonsterController>().DamageMonster();
 				}
 			}
 		}
@@ -38,7 +39,8 @@ public class GameController : MonoBehaviour {
 				if (raycastHit.collider.CompareTag("Monster"))
 				{
 					Debug.Log("Monster clicked");
-				}
+                    raycastHit.collider.gameObject.GetComponent<MonsterController>().DamageMonster();
+                }
 			}
 
 		}
