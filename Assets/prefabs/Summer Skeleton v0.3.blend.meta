@@ -1,0 +1,206 @@
+fileFormatVersion: 2
+guid: 9a33225a289905c4698d920cd29f7bc0
+timeCreated: 1515499065
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: ankle_l
+    100002: ankle_r
+    100004: ankleLK_l
+    100006: ankleRK_r
+    100008: Armature
+    100010: Bone
+    100012: Bone_001
+    100014: character
+    100016: duim1_l
+    100018: duim1_r
+    100020: duim2_l
+    100022: duim2_r
+    100024: foot_l
+    100026: foot_r
+    100028: footCtrl_l
+    100030: footCtrl_r
+    100032: footRolCtl_l
+    100034: footRolCtrl_r
+    100036: hand_l
+    100038: hand_r
+    100040: head
+    100042: HeelRoll_L
+    100044: heelRoll_r
+    100046: kneeCtrl_l
+    100048: kneeCtrl_r
+    100050: lowArm_l
+    100052: lowArm_r
+    100054: lowLeg_l
+    100056: lowLeg_r
+    100058: mid2_l
+    100060: mid2_r
+    100062: mid_l
+    100064: mid_r
+    100066: neck
+    100068: pink1_l
+    100070: pink1_r
+    100072: pink2_l
+    100074: pink2_r
+    100076: ring2_l
+    100078: ring2_r
+    100080: ring_l
+    100082: ring_r
+    100084: root
+    100086: spine1
+    100088: spine2
+    100090: //RootNode
+    100092: ToeRoll_l
+    100094: toeRoll_r
+    100096: upArm_l
+    100098: upArm_l_002
+    100100: upLeg_l
+    100102: upLeg_r
+    100104: wijs2_l
+    100106: wijs2_r
+    100108: wijs_l
+    100110: wijs_r
+    400000: ankle_l
+    400002: ankle_r
+    400004: ankleLK_l
+    400006: ankleRK_r
+    400008: Armature
+    400010: Bone
+    400012: Bone_001
+    400014: character
+    400016: duim1_l
+    400018: duim1_r
+    400020: duim2_l
+    400022: duim2_r
+    400024: foot_l
+    400026: foot_r
+    400028: footCtrl_l
+    400030: footCtrl_r
+    400032: footRolCtl_l
+    400034: footRolCtrl_r
+    400036: hand_l
+    400038: hand_r
+    400040: head
+    400042: HeelRoll_L
+    400044: heelRoll_r
+    400046: kneeCtrl_l
+    400048: kneeCtrl_r
+    400050: lowArm_l
+    400052: lowArm_r
+    400054: lowLeg_l
+    400056: lowLeg_r
+    400058: mid2_l
+    400060: mid2_r
+    400062: mid_l
+    400064: mid_r
+    400066: neck
+    400068: pink1_l
+    400070: pink1_r
+    400072: pink2_l
+    400074: pink2_r
+    400076: ring2_l
+    400078: ring2_r
+    400080: ring_l
+    400082: ring_r
+    400084: root
+    400086: spine1
+    400088: spine2
+    400090: //RootNode
+    400092: ToeRoll_l
+    400094: toeRoll_r
+    400096: upArm_l
+    400098: upArm_l_002
+    400100: upLeg_l
+    400102: upLeg_r
+    400104: wijs2_l
+    400106: wijs2_r
+    400108: wijs_l
+    400110: wijs_r
+    2100000: skeleton_col_summer__character_col
+    2100002: skeleton_col_summer__character_material_Diffuse_Color
+    4300000: character
+    7400000: Default Take
+    7400002: ArmatureAction
+    9500000: //RootNode
+    13700000: character
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
